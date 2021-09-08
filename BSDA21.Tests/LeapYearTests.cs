@@ -28,5 +28,22 @@ namespace BSDA21.Tests
             Assert.True(actual);
         }
     }
+
+    public class UnitTest3 
+    {
+        [Fact]
+        public void PrintsYayIfUserInputIsLeapYear() {
+            LeapYear LY = new LeapYear();
+            var year = int.Parse(Console.ReadLine());
+            
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+            LY.IsLeapYear(year);
+            
+            var actual = writer.GetStringBuilder().ToString().Trim();
+            
+            Assert.Equal("yay", actual);
+        }
+    }
 }
 

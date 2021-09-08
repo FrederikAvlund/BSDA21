@@ -7,23 +7,17 @@ public class LeapYear {
 
     bool isLeapYearBool;
 
-public bool isDivisibleByFour(int year) {
-    if (year % 4 == 0) {
-        isLeapYearBool = true;
-    }
-    return isLeapYearBool;
-}
-
-public bool IsLeapYear (int year) {
+public void IsLeapYear (int year) {
     if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
         isLeapYearBool = true;
     }
-    return isLeapYearBool;
-}
-
+    Console.WriteLine(isLeapYearBool ? "yay" : "nay");  
+    }
+    
 public static void Main(string[] args) {
     LeapYear LY = new LeapYear(); 
-    Console.WriteLine(LY.IsLeapYear(2000));
+    int year = int.Parse(Console.ReadLine());   
+    LY.IsLeapYear(year);
 }
 }
 }

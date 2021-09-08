@@ -4,7 +4,7 @@ using Xunit;
 
 namespace BSDA21.Tests
 {
-
+/*
     public class UnitTest1
     {
         [Fact]
@@ -28,7 +28,7 @@ namespace BSDA21.Tests
             Assert.True(actual);
         }
     }
-
+*/
     public class UnitTest3 
     {
         [Fact]

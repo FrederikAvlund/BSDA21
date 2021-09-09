@@ -54,9 +54,6 @@ namespace BSDA21.Tests
         [Fact]
         public void checksYearForErrors()
         {
-            while(Console.KeyAvailable) 
-                Console.ReadKey(false); // skips previous input chars
-
             Console.SetIn(new StringReader("1500"));
 
             var writer = new StringWriter();
@@ -76,9 +73,6 @@ namespace BSDA21.Tests
         [Fact]
         public void checksYearForStringErrors()
         {
-            while(Console.KeyAvailable) 
-                Console.ReadKey(false); // skips previous input chars
-
             Console.SetIn(new StringReader("abc"));
 
             var writer = new StringWriter();

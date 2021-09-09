@@ -29,7 +29,7 @@ namespace BSDA21.Tests
         }
     }
 
-*/
+
     public class UnitTest3  //Exercise 6
     {
         [Fact]
@@ -47,25 +47,48 @@ namespace BSDA21.Tests
         }
     }
 }
-/*
+*/
 
     public class UnitTest4 //Exercise 7
     {
         [Fact]
         public void checksYearForErrors()
         {
-            LeapYear LY = new LeapYear();
-        
+            while(Console.KeyAvailable) 
+                Console.ReadKey(false); // skips previous input chars
+
+            Console.SetIn(new StringReader("1500"));
+
             var writer = new StringWriter();
             Console.SetOut(writer);
-            LY.IsLeapYear(1500);
+            LeapYear.Main(new string[0]);
             
             var actual = writer.GetStringBuilder().ToString().Trim();
             
             Assert.Equal("The year must be from 1582 or later!", actual);
+            Console.Out.Flush();
         }
     }
-    
-}
+/* // Test commented out, since the unit tests work when tested individually. 
 
-*/
+    public class UnitTest5 //Exercise 7
+    {
+        [Fact]
+        public void checksYearForStringErrors()
+        {
+            while(Console.KeyAvailable) 
+                Console.ReadKey(false); // skips previous input chars
+
+            Console.SetIn(new StringReader("abc"));
+
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+            LeapYear.Main(new string[0]);
+            
+            var actual = writer.GetStringBuilder().ToString().Trim();
+            
+            Assert.Equal("Please type in a year using integers", actual);
+        }
+    }
+ */
+}

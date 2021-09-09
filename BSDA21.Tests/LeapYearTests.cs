@@ -5,7 +5,7 @@ using Xunit;
 namespace BSDA21.Tests
 {
 /*
-    public class UnitTest1
+    public class UnitTest1 //Exercise 5
     {
         [Fact]
         public void Checks_If_Divisible_By_Four()
@@ -17,7 +17,7 @@ namespace BSDA21.Tests
         }
     }
 
-    public class UnitTest2
+    public class UnitTest2 // Exercise 5
     {
         [Fact]
         public void IsLeapYear()
@@ -28,17 +28,18 @@ namespace BSDA21.Tests
             Assert.True(actual);
         }
     }
+
 */
-    public class UnitTest3 
+    public class UnitTest3  //Exercise 6
     {
         [Fact]
         public void PrintsYayIfUserInputIsLeapYear() {
-            LeapYear LY = new LeapYear();
-            var year = int.Parse(Console.ReadLine());
+            //var year = int.Parse(Console.ReadLine());
+            Console.SetIn(new StringReader("1600"));
             
             var writer = new StringWriter();
             Console.SetOut(writer);
-            LY.IsLeapYear(year);
+            LeapYear.Main(new string[0]);
             
             var actual = writer.GetStringBuilder().ToString().Trim();
             
@@ -46,4 +47,25 @@ namespace BSDA21.Tests
         }
     }
 }
+/*
 
+    public class UnitTest4 //Exercise 7
+    {
+        [Fact]
+        public void checksYearForErrors()
+        {
+            LeapYear LY = new LeapYear();
+        
+            var writer = new StringWriter();
+            Console.SetOut(writer);
+            LY.IsLeapYear(1500);
+            
+            var actual = writer.GetStringBuilder().ToString().Trim();
+            
+            Assert.Equal("The year must be from 1582 or later!", actual);
+        }
+    }
+    
+}
+
+*/
